@@ -28,3 +28,7 @@ Some useful Hexo [commands](https://hexo.io/docs/commands.html) for quick refere
 1. Use ```hexo new post <title>``` to create a new post in the blog
 2. Use ```hexo new page <title>``` to create a new page in your blog
 
+
+Useful tip : 
+
+1. Use ```npm run master-deploy``` to push the master source copy into the 'master' branch of this repo
