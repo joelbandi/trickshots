@@ -6,11 +6,11 @@
 
 # Site
 tabname: cat /var/log/blog
-title: Trick-shot
-subtitle: Programming trick shots and knuckleballs
+title: Trickshots
+subtitle: Programming trickshots and knuckleballs
 description: Joel Bandi's bestiary of useful tutorials and programming tricks
 author: Joel Bandi
-language: en-us
+language: en
 timezone: America/Los_Angeles
 
 # URL
