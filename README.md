@@ -21,14 +21,26 @@ __To obtain a local copy of this blog, follow directions below:__
 7. Visit [http://localhost:5000/](http://localhost:5000/) to access the blog
 
 
+__After making required changes if you wish to deploy the blog and push the code:__
+
+1. Update the repo field in the ```/_config.yml``` file to wherever you want to deploy
+2. Make sure the repo has a branch called ```gh-pages```
+2. _optional_ : You can also add heroku to your deploy option if need arises
+3. Run ```hexo deploy -g``` to publish it to the gh-pages branch of the specified repo
 
 
-Some useful Hexo [commands](https://hexo.io/docs/commands.html) for quick reference
 
-1. Use ```hexo new post <title>``` to create a new post in the blog
-2. Use ```hexo new page <title>``` to create a new page in your blog
+__Some useful Hexo [commands](https://hexo.io/docs/commands.html) for quick reference:__
+
+1. Use ```hexo new post <title>``` to create a new post in the blog.
+2. Use ```hexo new page <title>``` to create a new page in your blog.
 
 
-Useful tip : 
+__Useful tip:__
 
-1. Use ```npm run master-deploy``` to push the master source copy into the 'master' branch of this repo
+There are customized scripts in package.json file for ease of use.
+The following scripts work provided you have initialized the repository with proper git settings.
+
+1. Use ```npm run master-push``` to push the master source copy into the 'master' branch of this repo.
+2. Use ```npm run blog-deploy``` to deploy the blog on GitHub pages.
+3. Use ```npm run full-sync``` to perform both actions listed below.

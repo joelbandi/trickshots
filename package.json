@@ -6,7 +6,9 @@
     "version": "3.2.2"
   },
   "scripts": {
-    "master-deploy": "git add . && git commit -am 'master source update at $(date)' && git push origin master"
+    "master-push": "git add . && git commit -am 'master source update at $(date)' && git push origin master",
+    "blog-deploy": "hexo deploy -g",
+    "full-sync": "npm run master-push && npm run blog-deploy"
   },
   "dependencies": {
     "hexo": "^3.2.0",
