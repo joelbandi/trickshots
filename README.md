@@ -9,6 +9,9 @@ Trickshots that I've learnt during this journey
 This blog uses [Hexo](https://hexo.io/), a static site generator with over _10,000_ stars on github. You can check its rankings in [Staticgen](https://www.staticgen.com/)
 
 __To obtain a local copy of this blog, follow directions below:__
+
+
+
 1. Make sure you have [Node](https://nodejs.org/en/) and [Git](https://git-scm.com/) installed
 2. Follow instruction in [Hexo](https://hexo.io/) to install hexo-cli using ```npm install hexo-cli -g```
 3. Clone a local copy using ```git clone https://github.com/joelbandi/trickshots.git```
