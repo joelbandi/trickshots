@@ -1,0 +1,1 @@
+git add . && git commit -am "master source update at $(date)" && git push origin master
