@@ -87,10 +87,10 @@ list.forEach(new Consumer<Integer>() {
 });
 ```
 
-As you can see, We pass it an inline declaration class that is the `Consumer<Integer>` by using the `new` keyword. This is the anonymous construct we have talked about. We then override the accept method in the artifact. The `Consumer` is an interface actually defined in the java.lang.function package. Let's take a good look at the official documentation [here](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html) We understand that the Consumer is actually annotated by the word `@FunctionalInterface`. This is a special kind of interface and falls under the category of a SAM interface (Single abstract inheritance). 
+As you can see, We pass it an inline declaration class that is the `Consumer<Integer>` by using the `new` keyword. This is the anonymous construct we have talked about. We then override the accept method in the artifact. The `Consumer` is an interface actually defined in the java.lang.function package. Let's take a good look at the official documentation [here](https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html) We understand that the Consumer is actually annotated by the word `@FunctionalInterface`. This is a special kind of interface and falls under the category of a SAM interface (Single abstract Method). 
 
 
-To understand `@FunctionalInterface` we must also know about Single Abstract Method interfaces (SAM Interfaces). It means just interfaces with only one single abstract (has to be overriden)  method. In java, we already have many examples of such SAM interfaces. From java 8, they will also be referred as functional interfaces. Java 8, enforces the rule of single responsibility by marking these interfaces with a new annotation i.e. @FunctionalInterface. 
+To understand `@FunctionalInterface` we must also know about Single Abstract Method interfaces (SAM Interfaces). It means just interfaces with only one single abstract (has to be overriden)  method. In java, we already have many examples of such SAM interfaces. From java 8, they will also be referred as functional interfaces. Java 8, enforces the rule of single responsibility by marking these interfaces with a new annotation i.e. `@FunctionalInterface`. 
 
 The consumer is a functional interface predefined and declared in java8 that executes the overwritten code with the parameter passed given to it in the 'accept' method.(all methods are abstract by default in the abstract class).
 
@@ -191,7 +191,7 @@ my_forEach_Custom(list, new Custom<Integer>(){
 	//overriding the single abstract method (SAM)
 	@Override
 	void absorb(Integer integer){
-		System.out.printn("My_forEach_Custom: the number in the list is  :" + integer");
+		System.out.printn("My_forEach_Custom: the number in the list is  :" + integer);
 	}
 
 })```
@@ -200,7 +200,7 @@ or be awesome and use a lambda expression like this
 
 
 ```java
-my_forEach_Custom(list, (value) -> System.out.printn("My_forEach_Custom (Lambda): the number in the list is  :" + integer"));
+my_forEach_Custom(list, (value) -> System.out.printn("My_forEach_Custom (Lambda): the number in the list is  :" + integer));
 ```
 
 Lambda expression are a very useful way to implement what is known as a callback, A callback is function whose code is supplied at run-time and called into execution programmatically at a predefined time. It is of extreme importance in asyncrhonous web programming models that languages like nodejs and web browsers use to function.
