@@ -46,4 +46,4 @@ The following scripts work provided you have initialized the repository with pro
 3. Use ```npm run full-sync``` to perform both actions listed below.
 
 
-Joel Bandi - Trickshots
+INFO: This blog is the property of Joel Bandi. 
