@@ -20,7 +20,7 @@ public class HelloWorld {
 ```
 _taken from [sparkjava](http://www.sparkjava.com)_
 
-And if youre expression looked something like this,
+And if your expression looked something like this,
 ![messi](https://i.imgflip.com/ppzib.jpg "Awkward!")
 
 __Then fear not__, because we will (by the end of this post) understand everything about lambda expression, how to write methods that takes in lambda expressions and how to effectively use lambda expressions in our code.
