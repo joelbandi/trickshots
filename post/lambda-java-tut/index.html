@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Joel Bandi&#39;s bestiary of useful tutorials and programming tricks">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Joel Bandi">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Your Guide to Lambda Expressions in Java"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Joel Bandi&#39;s bestiary of useful tutorials and programming tricks" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Trickshots"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+        <meta name="twitter:site" content="JoelBandi>" />
+    
+
+    <!-- Title -->
+    
+    <title>Your Guide to Lambda Expressions in Java - Trickshots</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/trickshots/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-80509175-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/trickshots/">Trickshots</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="https://joelbandi.github.io/">
+                            
+                                Joelbandi
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/trickshots/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/joelbandi">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://linkedin.com/in/joelbandi">
+                            
+                                <i class="fa fa-linkedin-square fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1436990107126-fee768acab75?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=336aa9c5166164f6a306625bc0e1f7b4')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Your Guide to Lambda Expressions in Java</h1>
+                    
+                    <h2 class="post-subheading">
+                        Hit the ground running
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                            Authored by Joel Bandi on
+                        
+                        2016-07-06
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/trickshots/tags/Java/">#Java</a> <a href="/trickshots/tags/Funtional-programming/">#Funtional programming</a> <a href="/trickshots/tags/Tutorials/">#Tutorials</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/trickshots/categories/Tutorials/">Tutorials</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>You may have previously encountered code that looked like this:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> spark.Spark.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        get(<span class="string">"/hello"</span>, (req, res) -&gt; <span class="string">"Hello World"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>taken from <a href="http://www.sparkjava.com" target="_blank" rel="external">sparkjava</a></em></p>
+<p>And if your expression looked something like this,<br><img src="https://i.imgflip.com/ppzib.jpg" alt="messi" title="Awkward!"></p>
+<p><strong>Then fear not</strong>, because we will (by the end of this post) understand everything about lambda expression, how to write methods that takes in lambda expressions and how to effectively use lambda expressions in our code.</p>
+<p>First of all, We need to understand what a lambda expression is. Sometimes some libraries use programming patterns where the methods take in an inline declaration of a method or a class as an argument using the <code>new</code> keyword. These are called anonymous classes or methods because they dont have name. They are directly used as soon as they are created and hence, we dont need to store their reference in some variable. Android framework typically uses this pattern to usually implement callbacks and listeners.</p>
+<p>Now, what has this got to do with a lambda Expression? well, lambda expressions is a shorter way of writing these anonymous constructs. One can almost say that lambda expressions are like syntactic sugar designed by Java developers to mimic some of the functional programming languages like javascript or haskell.</p>
+<p>So without further ado, let’s get to the fun part</p>
+<p>A lambda expression looks like the following syntax </p>
+<pre><code>(parameters) -&gt; do something;
+</code></pre><p>or when you have mutliple statements and parameters,</p>
+<pre><code>(parameters1, parameter2) -&gt; {
+    statement 1;
+    statement 2; 
+}
+</code></pre><p>Upon closer investigation you’ll notice that a lambda expression is like a method except </p>
+<ol>
+<li>It does not require a return type. It’s automatically inferred!!</li>
+<li>It doesnt  need a name (It’s anonymous).</li>
+<li>you don’t have to  use ‘new’ keyword.</li>
+<li>No need of block braces if only one statement.</li>
+<li>No need of mentioning the data type if the parameters. It’s automatically inferred!!</li>
+</ol>
+<p>OK, Now to write one of our own , let us define a new java List of Integer’s:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">List&lt;Integer&gt; = Arrays.asList(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>);</div></pre></td></tr></table></figure>
+<p>In order to print the numbers in this list, we use a lambda expression</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">list.forEach((Integer value)) -&gt; System.out.println(<span class="string">"Lambda expression: The number is "</span> + value));</div></pre></td></tr></table></figure>
+<p>Now compile and run this code using a <em>java8</em> JDK<br>This is a lambda expression in all its glory. In fact, The <code>Integer</code> was unnecessary</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">list.forEach((value)) -&gt; System.out.println(<span class="string">"Lambda expression: The number is "</span> + value));</div></pre></td></tr></table></figure>
+<p> Now experienced java programmers immediately think about two things:</p>
+<ol>
+<li>How in the heck is the right parameter being passed into the lambda expression??!?!?!</li>
+<li>The <code>forEach</code> method in the <code>List&lt;T&gt;</code> interface must be specially set-up so that it takes in a lambda expression</li>
+</ol>
+<p>To answer these questions, Let us closely look at the <strong>original</strong> and more verbose way of writing the above code and what the <code>forEach</code>method really is looking for in terms of arguments.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">list.forEach(<span class="keyword">new</span> Consumer&lt;Integer&gt;() &#123;</div><div class="line">            </div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Integer integer)</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"Object reference: the number in the list is  :"</span> + integer);</div><div class="line">        &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>As you can see, We pass it an inline declaration class that is the <code>Consumer&lt;Integer&gt;</code> by using the <code>new</code> keyword. This is the anonymous construct we have talked about. We then override the accept method in the artifact. The <code>Consumer</code> is an interface actually defined in the java.lang.function package. Let’s take a good look at the official documentation <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html" target="_blank" rel="external">here</a> We understand that the Consumer is actually annotated by the word <code>@FunctionalInterface</code>. This is a special kind of interface and falls under the category of a SAM interface (Single abstract Method). </p>
+<p>To understand <code>@FunctionalInterface</code> we must also know about Single Abstract Method interfaces (SAM Interfaces). It means just interfaces with only one single abstract (has to be overriden)  method. In java, we already have many examples of such SAM interfaces. From java 8, they will also be referred as functional interfaces. Java 8, enforces the rule of single responsibility by marking these interfaces with a new annotation i.e. <code>@FunctionalInterface</code>. </p>
+<p>The consumer is a functional interface predefined and declared in java8 that executes the overwritten code with the parameter passed given to it in the ‘accept’ method.(all methods are abstract by default in the abstract class).</p>
+<p>Now Let’s a function similar to the <code>forEach</code> method using all that we have learnt. Our function dubbed as <code>my_forEach_consumer</code> takes in two arguments; a list and an anonymous method/Lambda expression to be to be executed. </p>
+<p>Let’s start by declaring our method as follows :</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// the function definition  of the forEach_Consumer method</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">my_forEach_consumer</span><span class="params">(List&lt;Integer&gt; list, Consumer&lt;Integer&gt; consumer)</span></span>&#123;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (Integer i : list)&#123;</div><div class="line">            </div><div class="line">            <span class="comment">// the lambda expression gets the variable passed to the accept method</span></div><div class="line">            <span class="comment">// here we call consumer accept method which will be overriden when using this function.</span></div><div class="line">            <span class="comment">// implying the accept functionality is defined at runtime of this code</span></div><div class="line"></div><div class="line">            consumer.accept(i);</div><div class="line">        </div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>and now we can use in one of the two ways, the anonymous composition method </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">my_forEach_consumer(list, <span class="keyword">new</span> Consumer&lt;Integer&gt;()&#123;</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Integer integer)</span> </span>&#123;</div><div class="line">    	System.out.println(<span class="string">"my_forEach_consumer: the number in the list is  :"</span> + integer);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>or wield the power of a lambda expression like so </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// we don't even have to specify the data type of the parameters passed in</span></div><div class="line"><span class="comment">// a lambda expression automatically infers a lot from its lexical position in the code</span></div><div class="line"></div><div class="line">my_forEach_consumer(list, (data) -&gt; System.out.println(<span class="string">"my_forEach_consumer (lambda expression): the number in the list is  :"</span> + data))</div></pre></td></tr></table></figure>
+<p>Notice how we reduced the amount of code we have to type, that is one of the main advantages of lambda expressions. Consumer is not the only functional interface we have. Another common interface we might have used without knowing it is one - Runnables.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="comment">// a small example of runnables and run methods</span></div><div class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        System.out.println(<span class="string">"Runnable: Hello World from a runnable"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;).start();</div><div class="line"></div><div class="line"><span class="comment">// Above code does the same as below</span></div><div class="line"><span class="keyword">new</span> Thread(  ()-&gt; System.out.println(<span class="string">"Runnable (Lambda) : Hellow world from a runnable"</span>)  ).start();</div></pre></td></tr></table></figure>
+<p>Now let’s try to define our own <code>@FunctionalInterface</code> and another method that multiples the numbers by <code>10</code> and then prints them in order.<br>Lets declare our interface named as <code>Custom</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="meta">@FunctionalInterface</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Custom</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line">	</div><div class="line">	<span class="comment">// YAY! java generics</span></div><div class="line"></div><div class="line">	<span class="comment">// all methods in defined in an interface MUST be abstract so you dont have to explicitly mention the abstract modifier</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">absorb</span><span class="params">(T t)</span></span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Now, lets define our custom method called <code>my_forEach_Custom</code> which takes in a <code>List</code>, a object that implements a <code>Custom</code> interface and prints the numbers mulitplied by 10.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  <span class="title">my_forEach_Custom</span><span class="params">(List&lt;Integer&gt; list, Custom&lt;Integer&gt; custom)</span></span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">for</span>(Integer i : list)&#123;</div><div class="line"></div><div class="line">		<span class="comment">//auto-boxing FTW!!</span></div><div class="line">		i *= <span class="number">10</span>;</div><div class="line">		custom.accept(i);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Now let’s use it in our code:</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">my_forEach_Custom(list, <span class="keyword">new</span> Custom&lt;Integer&gt;()&#123;</div><div class="line">	</div><div class="line">	<span class="comment">//overriding the single abstract method (SAM)</span></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">absorb</span><span class="params">(Integer integer)</span></span>&#123;</div><div class="line">		System.out.printn(<span class="string">"My_forEach_Custom: the number in the list is  :"</span> + integer);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>or be awesome and use a lambda expression like this</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">my_forEach_Custom(list, (value) -&gt; System.out.printn(<span class="string">"My_forEach_Custom (Lambda): the number in the list is  :"</span> + integer));</div></pre></td></tr></table></figure>
+<p>Lambda expression are a very useful way to implement what is known as a callback, A callback is function whose code is supplied at run-time and called into execution programmatically at a predefined time. It is of extreme importance in asyncrhonous web programming models that languages like nodejs and web browsers use to function.</p>
+<p>Now that you have everything you need to not only use lambda expressions but also write library code that supports a lambda expression, you can now hit the ground running. Thanks for reading this tutorial and I hope it helped you as much it helped me. Please follow my blog and me for regular trickshots.</p>
+<p>Now take a <a href="http://imgur.com/topic/Aww/8NxOHTw" target="_blank" rel="external">gift</a> from me and tarry on forward fellow coder!</p>
+<p>The source for this tutorial is available <a href="https://github.com/joelbandi/Implementations/blob/master/Misc/Java8/Lambda_Complete.java" target="_blank" rel="external">here</a></p>
+
+
+                
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-577cc072641f3241"></script>
+
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_sharing_toolbox"></div>
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+    <hr />
+    <h3>Comments:</h3>
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1783038578609844";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="fb-comments" data-href="http://joelbandi.github.io/trickshots/post/lambda-java-tut/index.html" data-num-posts="7" data-width="100%" data-colorscheme="light"></div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/JoelBandi" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/joelbandi" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://linkedin.com/in/joelbandi" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="mailto:joelvivekbandi@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a> and modified by <a href="https://joelbandi.github.io/" target="_blank">Joel Bandi</a></p>
+                <p class="copyright text-muted"><a href="https://github.com/joelbandi/trickshots">Source</a> for this blog on GitHub</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
