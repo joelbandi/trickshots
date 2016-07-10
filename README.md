@@ -45,5 +45,11 @@ The following scripts work provided you have initialized the repository with pro
 2. Use ```npm run blog-deploy``` to deploy the blog on GitHub pages.
 3. Use ```npm run full-sync``` to perform both actions listed below.
 
+or use
+	./master-push.sh
+	or
+	./blog-deplot.sh
+	or
+	./full-sync.sh
 
 INFO: This blog is the property of Joel Bandi. 
