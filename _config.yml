@@ -73,6 +73,6 @@ theme: clean
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/joelbandi/trickshots.github.io.git
+  repo: https://github.com/joelbandi/trickshots.git
   branch: gh-pages
   message: Site updated -> {{ now('YYYY-MM-DD HH:mm:ss') }}

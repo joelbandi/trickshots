@@ -43,13 +43,13 @@ The following scripts work provided you have initialized the repository with pro
 
 1. Use ```npm run master-push``` to push the master source copy into the 'master' branch of this repo.
 2. Use ```npm run blog-deploy``` to deploy the blog on GitHub pages.
-3. Use ```npm run full-sync``` to perform both actions listed below.
+3. Use ```npm run full-sync``` to perform both actions listed above.
 
 or use
-	./master-push.sh
-	or
-	./blog-deplot.sh
-	or
-	./full-sync.sh
+		./master-push.sh
+		or
+		./blog-deplot.sh
+		or
+		./full-sync.sh
 
 INFO: This blog is the property of Joel Bandi. 
