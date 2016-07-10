@@ -1,0 +1,47 @@
+# This is under 'theme' namespace 
+
+# Header
+menu:
+  Joelbandi: /
+  Archives: /archives
+  Github:
+    url: https://github.com/joelbandi
+    icon: github
+  Linkedin:
+    url: https://linkedin.com/in/joelbandi
+    icon: linkedin-square
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title:
+
+# URL of the Home page image
+index_cover: https://images.unsplash.com/photo-1436990107126-fee768acab75?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=336aa9c5166164f6a306625bc0e1f7b4
+
+# Default post title
+default_post_title: Untitled
+
+# Comments. Choose one by filling up the information
+comments:
+  # Disqus comments
+  disqus_shortname:
+  # Facebook comments
+  facebook:
+    appid: 1783038578609844
+    comment_count: 7
+    comment_colorscheme: light
+
+# Google Analytics Tracking ID
+google_analytics: UA-80509175-1
+
+
+# Addthis ID
+addthis: ra-577cc072641f3241
+
+# Social Accounts
+twitter_url: https://twitter.com/JoelBandi
+twitter_handle: JoelBandi
+facebook_url: 
+github_url: https://github.com/joelbandi
+gitlab_url:
+linkedin_url: https://linkedin.com/in/joelbandi
+mailto: joelvivekbandi@gmail.com
