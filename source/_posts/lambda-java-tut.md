@@ -2,7 +2,7 @@
 title: Your guide to Lambda expressions in java
 subtitle: Hit the ground running
 date: 2016-07-06 06:39:56
-tags: ["Java","Funtional programming","Tutorials"]
+tags: ["Java","Functional programming","Tutorials"]
 categories: ["Tutorials"]
 draft: false
 author: Joel Bandi
