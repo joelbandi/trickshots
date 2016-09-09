@@ -160,8 +160,6 @@ Lets declare our interface named as `Custom`
 @FunctionalInterface
 public interface Custom<T>{
 	
-	// YAY! java generics
-
 	// all methods in defined in an interface MUST be abstract so you dont have to explicitly mention the abstract modifier
     void absorb(T t);
 
@@ -201,13 +199,13 @@ or be awesome and use a lambda expression like this
 
 
 ```java
-my_forEach_Custom(list, (value) -> System.out.printn("My_forEach_Custom (Lambda): the number in the list is  :" + integer));
+my_forEach_Custom(list, (data) -> System.out.printn("My_forEach_Custom (Lambda): the number in the list is  :" + data));
 ```
 
 Lambda expression are a very useful way to implement what is known as a callback, A callback is function whose code is supplied at run-time and called into execution programmatically at a predefined time. It is of extreme importance in asyncrhonous web programming models that languages like nodejs and web browsers use to function.
 
 Now that you have everything you need to not only use lambda expressions but also write library code that supports a lambda expression, you can now hit the ground running. Thanks for reading this tutorial and I hope it helped you as much it helped me. Please follow my blog and me for regular trickshots.
 
-Now take a [gift](http://imgur.com/topic/Aww/8NxOHTw) from me and tarry on forward fellow coder!
+Now take a [gift](http://imgur.com/topic/Aww/8NxOHTw) from me and carry on forward fellow coder!
 
 The source for this tutorial is available [here](https://github.com/joelbandi/Implementations/blob/master/Misc/Java8/Lambda_Complete.java)
